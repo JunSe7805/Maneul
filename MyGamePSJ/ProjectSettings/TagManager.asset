@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Skill
+  - Arrow
+  - PickUp
+  - Enemy
+  - LifeBar
+  - phase_3
+  - BossUI
+  - PartyHp
+  - PlayerSki
+  - State
+  - Exp
+  - BossTxtUI
+  - pUIText
+  - Test
+  - Boss_UI
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class BossUI : MonoBehaviour
         b_currentHp = b_maxHp;
         UpdateBossHpUI();
         //HpPercent.text = Hp.fillAmount.ToString();
+
     }
 
     public void BossUIHpBar()

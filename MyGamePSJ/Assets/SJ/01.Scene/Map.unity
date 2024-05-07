@@ -2128,6 +2128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1688293513966824534, guid: 2a9263dd375f002448d44ea12bf537bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1688293514096124821, guid: 2a9263dd375f002448d44ea12bf537bc, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3911,8 +3915,8 @@ GameObject:
   - component: {fileID: 644587605}
   - component: {fileID: 644587604}
   m_Layer: 0
-  m_Name: 3Phase
-  m_TagString: Untagged
+  m_Name: Phase_3
+  m_TagString: Test
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4230,22 +4234,13 @@ GameObject:
   m_Component:
   - component: {fileID: 690083738}
   - component: {fileID: 690083737}
-  - component: {fileID: 690083736}
   m_Layer: 3
   m_Name: MiniMapCamera
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &690083736
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690083735}
-  m_Enabled: 1
 --- !u!20 &690083737
 Camera:
   m_ObjectHideFlags: 0
@@ -8361,6 +8356,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010140763972, guid: b12c8b6046ef0604b96e60fe14b9c16e, type: 3}
   m_PrefabInstance: {fileID: 1644782078}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1659104279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659104280}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Test
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659104280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659104279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.19, y: 0, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1773236231}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661417654
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,6 +9528,7 @@ Transform:
   - {fileID: 1784810466}
   - {fileID: 986236661}
   - {fileID: 1772327677}
+  - {fileID: 1659104280}
   m_Father: {fileID: 1463431530}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10544,7 +10570,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6340153211917069218, guid: 54aa9227b2b30f242b43a78b2e23472c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54aa9227b2b30f242b43a78b2e23472c, type: 3}
 --- !u!4 &1933647364 stripped
 Transform:
@@ -11385,7 +11412,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6340153211917069218, guid: 54aa9227b2b30f242b43a78b2e23472c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54aa9227b2b30f242b43a78b2e23472c, type: 3}
 --- !u!4 &2064499454 stripped
 Transform:

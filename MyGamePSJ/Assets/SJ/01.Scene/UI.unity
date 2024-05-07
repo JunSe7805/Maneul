@@ -1539,6 +1539,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1831051422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6100732839581051117, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
+  m_PrefabInstance: {fileID: 6100732839588384243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1831051423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831051422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efaf2d98783664646a9829303b7a7b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boss_UI: {fileID: 1831051422}
+  player: {fileID: 0}
+  Test: {fileID: 0}
+  activationDistance: 5
 --- !u!224 &1865812667 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2646418746421068113, guid: 04efa4a936f6a1c43a4020b2c712782c, type: 3}
@@ -2309,6 +2330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossHpUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6100732838300103404, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
+      propertyPath: m_TagString
+      value: BossUI
+      objectReference: {fileID: 0}
     - target: {fileID: 6100732839581051116, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2395,11 +2420,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6100732839581051117, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
       propertyPath: m_Name
-      value: BossUI
+      value: Boss_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100732839581051117, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6100732839581051117, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Boss_UI
       objectReference: {fileID: 0}
     - target: {fileID: 7212812010850581694, guid: c254c0094c301e747aa1ca4317140db3, type: 3}
       propertyPath: m_AnchoredPosition.y
