@@ -1,42 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.UI;
 
-public class BossUIState : MonoBehaviour
-{
-    public GameObject Boss_UI;
-    public GameObject player;
-    public GameObject Test; // 3페이즈 게임 오브젝트
-    public float activationDistance = 5f; // 활성화 거리
-    private bool isPlayerNearTest = false; // 플레이어가 Test 오브젝트 근처에 있는지 여부를 나타내는 변수
+//public class BossUIState : MonoBehaviour
+//{
+//    public RectTransform Boss_UI;
+//    public GameObject player;
+//    public GameObject Test;
+//    public float activationDistance = 5f;
+//    private bool isPlayerNearTest = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Boss_UI = GameObject.Find("Boss_UI").GetComponent<GameObject>();
-        player = GameObject.Find("Player").GetComponent<GameObject>();
-        Test = GameObject.FindGameObjectWithTag("Test");
-    }
+//    void Start()
+//    {
+//        // Boss_UI를 찾아서 RectTransform으로 설정
+//        Boss_UI = GameObject.Find("Boss_UI").GetComponent<RectTransform>();
+//        player = GameObject.FindGameObjectWithTag("Player");
+//        Test = GameObject.FindGameObjectWithTag("Test");
 
-    // Update is called once per frame
-    void Update()
-    {
-        // 플레이어와 Test 오브젝트 사이의 거리를 계산
-        float distance = Vector3.Distance(player.transform.position, Test.transform.position);
+//        // 초기 상태에서는 Boss_UI를 활성화 상태로 설정
+//        SetBossUIActive(true);
+//    }
 
-        // 플레이어가 Test 오브젝트 근처에 있는지 여부를 업데이트
-        isPlayerNearTest = distance < activationDistance;
+//    void Update()
+//    {
+//        // 플레이어와 Test 오브젝트 사이의 거리를 계산
+//        float distance = Vector3.Distance(player.transform.position, Test.transform.position);
 
-        // 플레이어가 Test 오브젝트 근처에 있다면 Boss_UI를 비활성화
-        if (isPlayerNearTest)
-        {
-            Boss_UI.SetActive(true);
-            Debug.Log(1);
-        }
-        else
-        {
-            Boss_UI.SetActive(false);
-            Debug.Log(2);
-        }
-    }
-}
+//        // 플레이어가 Test 오브젝트 근처에 있는지 여부를 업데이트
+//        isPlayerNearTest = distance < activationDistance;
+
+//        // Boss_UI의 활성화 상태를 업데이트
+//        SetBossUIActive(isPlayerNearTest);
+//    }
+
+//    // Boss_UI의 활성화 상태를 설정하는 함수
+//    void SetBossUIActive(bool active)
+//    {
+//        if (Boss_UI != null && Boss_UI.gameObject.activeSelf != active)
+//        {
+//            Boss_UI.gameObject.SetActive(active);
+//            Debug.Log(active ? "Boss_UI 활성화" : "Boss_UI 비활성화");
+//        }
+//    }
+//}

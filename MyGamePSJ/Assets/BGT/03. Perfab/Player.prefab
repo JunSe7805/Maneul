@@ -746,14 +746,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
---- !u!4 &1688293515104061054 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400024, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-  m_PrefabInstance: {fileID: 1688293515103673574}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1688293515104061216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400326, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+  m_PrefabInstance: {fileID: 1688293515103673574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1688293515104061054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400024, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
   m_PrefabInstance: {fileID: 1688293515103673574}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7252431806726875534
@@ -857,14 +857,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 971de6301b09f154e81f6b27862d54a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022a72268e462114788abcf0c0b07418, type: 3}
---- !u!1 &7252431806726844206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 022a72268e462114788abcf0c0b07418, type: 3}
-  m_PrefabInstance: {fileID: 7252431806726875534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7252431806727009036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 022a72268e462114788abcf0c0b07418, type: 3}
+  m_PrefabInstance: {fileID: 7252431806726875534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7252431806726844206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 022a72268e462114788abcf0c0b07418, type: 3}
   m_PrefabInstance: {fileID: 7252431806726875534}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7252431807836946274
@@ -886,21 +886,3 @@ MonoBehaviour:
   trailRenderer: {fileID: 7455093753680405153, guid: 84a79ec4aef3b414bacc380fd91b96cd, type: 3}
   ArrowPos: {fileID: 7252431807138126086}
   Arrow: {fileID: 7455093753680405158, guid: 84a79ec4aef3b414bacc380fd91b96cd, type: 3}
---- !u!114 &7252431806914883920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7252431806726844206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e1ebf9d5cb00243b4b2ad4852925a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Active: {fileID: 11400000, guid: 3a9cf592b53a0d142bfaf4674d5f9ece, type: 2}
-  player: {fileID: 1688293515376731627}
-  imgIcon: {fileID: 0}
-  imgCool: {fileID: 0}
-  ArrowPos: {fileID: 7252431807138126086}
-  Skill: {fileID: 100010, guid: a8d60f6853b51ee4ba75f1966f4f358f, type: 3}
