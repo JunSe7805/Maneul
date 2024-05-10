@@ -19,6 +19,8 @@ TagManager:
   - pUIText
   - Test
   - Boss_UI
+  - Point
+  - Boss
   layers:
   - Default
   - TransparentFX

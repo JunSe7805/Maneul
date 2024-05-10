@@ -936,7 +936,7 @@ RectTransform:
   - {fileID: 2057050333}
   - {fileID: 1312164289}
   - {fileID: 1466809318}
-  - {fileID: 4496747579962776590}
+  - {fileID: 1381510172}
   - {fileID: 97363861}
   - {fileID: 1051939652}
   - {fileID: 148476756}
@@ -1338,6 +1338,59 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7391573715504087089, guid: 5216220649d606c44afa7de811090a11, type: 3}
   m_PrefabInstance: {fileID: 7391573714326407664}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381510171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381510172}
+  - component: {fileID: 1381510173}
+  m_Layer: 5
+  m_Name: BossUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1381510172
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381510171}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4496747579962776590}
+  m_Father: {fileID: 777589613}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 446.2}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1381510173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381510171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05324989c2d89f5449b2d68b06175747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boss: {fileID: 0}
+  player: {fileID: 0}
+  Point: {fileID: 0}
+  activationDistance: 60
 --- !u!1 &1466809317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,12 +2289,12 @@ RectTransform:
   - {fileID: 6100732838576977762}
   - {fileID: 6100732838915493378}
   - {fileID: 6100732839022269886}
-  m_Father: {fileID: 777589613}
-  m_RootOrder: 3
+  m_Father: {fileID: 1381510172}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -93.79999}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 1000, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &4766926735867285134
@@ -2710,7 +2763,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossHp_Border: {fileID: 0}
   player: {fileID: 0}
-  Test: {fileID: 0}
   activationDistance: 5
 --- !u!114 &6100732840061315270
 MonoBehaviour:
@@ -3116,8 +3168,8 @@ GameObject:
   - component: {fileID: 2352552751635530116}
   - component: {fileID: 6100732839588384247}
   m_Layer: 5
-  m_Name: BossHp_Border
-  m_TagString: Untagged
+  m_Name: Boss
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
