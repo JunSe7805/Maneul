@@ -37,11 +37,5 @@ public class BossUI_OnOff : MonoBehaviour
             }
         }
     }
-    void ShowUI()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Boss.gameObject.SetActive(true);
-        }
-    }
+
 }
