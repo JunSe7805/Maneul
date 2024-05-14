@@ -264,7 +264,7 @@ public class PlayerCtrl : MonoBehaviour
 
             if (diveRoll)
             {
-                controller.Move(charaterBody.forward * diveSpeed * Time.deltaTime);
+                controller.Move(charaterBody.forward * (finalSpeed *3f) * Time.deltaTime);
                 moveDirection = diveDirection;
             }
             else

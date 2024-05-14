@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05324989c2d89f5449b2d68b06175747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss: {fileID: 0}
+  Boss_UI: {fileID: 0}
   player: {fileID: 0}
   Point: {fileID: 0}
   activationDistance: 60
@@ -2338,11 +2338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489066745420274327, guid: e769995564ab82840b755034353a437f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8489066745420274327, guid: e769995564ab82840b755034353a437f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8489066745420274327, guid: e769995564ab82840b755034353a437f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2374,11 +2374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489066745420274327, guid: e769995564ab82840b755034353a437f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -321
+      value: -364
       objectReference: {fileID: 0}
     - target: {fileID: 8489066745420274327, guid: e769995564ab82840b755034353a437f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -94
+      value: -87
       objectReference: {fileID: 0}
     - target: {fileID: 8489066745420274327, guid: e769995564ab82840b755034353a437f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3189,7 +3189,7 @@ GameObject:
   - component: {fileID: 6100732839588384247}
   m_Layer: 5
   m_Name: Boss
-  m_TagString: Boss
+  m_TagString: Boss_UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
