@@ -1,41 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class VRMap
 {
     public Transform vrTarget;
-    public Transform rigTarget;
+    public Transform ikTarget;
     public Vector3 trackingPositionOffset;
     public Vector3 trackingRotationOffset;
-
     public void Map()
     {
-        rigTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
-        rigTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
+        ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
+        ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
     }
 }
+
 public class VRRig : MonoBehaviour
 {
+    [Range(0, 1)]
+    public float turnSmoothness = 0.1f;
     public VRMap head;
     public VRMap leftHand;
     public VRMap rightHand;
 
-    public Transform headConstraint;
-    public Vector3 headBodyOffset;
+    public Vector3 headBodyPositionOffset;
+    public float headBodyYawOffset;
 
-    // Start is called before the first frame update
-    void Start()
+    void LateUpdate()
     {
-        headBodyOffset = transform.position - headConstraint.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = headConstraint.position + headBodyOffset;
-        transform.forward = Vector3.ProjectOnPlane(headConstraint.up, Vector3.up).normalized;
+        transform.position = head.ikTarget.position + headBodyPositionOffset;
+        float yaw = head.vrTarget.eulerAngles.y;
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, yaw, transform.eulerAngles.z), turnSmoothness);
 
         head.Map();
         leftHand.Map();

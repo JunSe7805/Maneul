@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public MeshRenderer lifeBar;
-    public PlayerCtrl _player;
+    public GameObject _player;
+    public GameObject VRPlayer;
     public Transform charaterBody;
     Animator anime;
 
@@ -21,7 +22,6 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         anime = GetComponent<Animator>();
-        _player = GameObject.FindWithTag("Player").GetComponent<PlayerCtrl>();
     }
 
     void Start()
