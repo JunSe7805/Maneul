@@ -12,12 +12,12 @@ public class StageManager : MonoBehaviour
     void Awake()
     {
         EnemySpawnPoints = GameObject.Find("SpawnPoint").GetComponentsInChildren<Transform>();
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerCtrl>();
+       player = GameObject.FindWithTag("Player").GetComponent<PlayerCtrl>();
     }
 
     void Start()
     {
-        if (!player.dieCheck)
+        //if (!player.dieCheck)
         {
             StartCoroutine(this.CreateEnemy());
         }
@@ -30,7 +30,7 @@ public class StageManager : MonoBehaviour
 
     IEnumerator CreateEnemy()
     {
-        while (!player.dieCheck)
+        while (true)
         {
             yield return new WaitForSeconds(5.0f);
 

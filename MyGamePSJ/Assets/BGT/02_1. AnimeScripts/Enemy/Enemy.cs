@@ -41,6 +41,13 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Damage());
         }
 
+        if(col.gameObject.tag == "VRSword" && _curHp > 0)
+        {
+            VRSword vrsword = col.GetComponent<VRSword>();
+            _curHp -= vrsword.damage;
+            lifeBar.material.SetFloat("_Progress", _curHp / 100.0f);
+            StartCoroutine(Damage());
+        }
         if (col.gameObject.tag == "Skill" && _curHp > 0)
         {
             Debug.Log("SkillHit");

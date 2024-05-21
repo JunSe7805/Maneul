@@ -65,14 +65,14 @@ public class PlayerCtrl : MonoBehaviour
         attackHit = false;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         CameraRotation();
         GetInput();
         ShotCheck();
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         GroundCheck();
         InputMoveMent();

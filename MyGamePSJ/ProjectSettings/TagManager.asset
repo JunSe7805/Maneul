@@ -21,11 +21,12 @@ TagManager:
   - Boss_UI
   - Point
   - Boss
+  - VRSword
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - VRPlayer
   - Water
   - UI
   - Direct Interactble
