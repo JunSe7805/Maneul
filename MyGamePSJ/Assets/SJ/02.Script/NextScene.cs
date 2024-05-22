@@ -11,4 +11,9 @@ public class NextScene : MonoBehaviour
         PassSceneManager.LoadScene("Map");
 
     }
+
+    public void BackScene()
+    {
+
+    }
 }
