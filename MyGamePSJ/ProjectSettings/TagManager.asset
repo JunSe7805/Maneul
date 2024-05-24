@@ -22,6 +22,7 @@ TagManager:
   - Point
   - Boss
   - VRSword
+  - VRPlayer
   layers:
   - Default
   - TransparentFX

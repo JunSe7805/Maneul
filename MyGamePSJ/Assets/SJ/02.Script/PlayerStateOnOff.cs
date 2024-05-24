@@ -16,7 +16,7 @@ public class PlayerStateOnOff : MonoBehaviour
     void Start()
     {
         // 초기 상태 설정: VRplayer 활성화, Player 비활성화
-        SetPlayerState(true);
+        SetPlayerState(false);
     }
 
     void Update()
@@ -29,9 +29,9 @@ public class PlayerStateOnOff : MonoBehaviour
         }
     }
 
-    private void SetPlayerState(bool isVR)
+    private void SetPlayerState(bool isPlay)
     {
-        VRplayer.SetActive(isVR);
-        Player.SetActive(!isVR);
+        VRplayer.SetActive(isPlay);
+        Player.SetActive(!isPlay);
     }
 }

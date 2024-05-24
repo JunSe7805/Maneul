@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    public static GameUIManager instance;
+
     [SerializeField] public Transform charaterBody;
     Vector3 moveDirection;
     Vector3 MoveDir;
@@ -46,6 +48,8 @@ public class PlayerCtrl : MonoBehaviour
     bool groundCheck;
     int weaponsIndex = 0;
 
+    public PlayerStateUI playerStateUI;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -54,6 +58,7 @@ public class PlayerCtrl : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         target = GetComponent<TargetManager>();
         dieCheck = false;
+        playerStateUI = GetComponent<PlayerStateUI>();
     }
 
     void Start()
@@ -63,6 +68,7 @@ public class PlayerCtrl : MonoBehaviour
         MoveDir = Vector3.zero;
         _curHp = _maxHp;
         attackHit = false;
+        //GameUIManager.instance.PlayerHpUI(40.0f,100.0f);
     }
 
     protected virtual void Update()
