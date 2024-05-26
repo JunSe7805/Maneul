@@ -36,6 +36,17 @@ public class PlayerStateUI : MonoBehaviour
         stateBars = GameObject.FindGameObjectsWithTag("State").Select(go => go.GetComponent<Image>()).ToArray();
         stateTexts = GameObject.FindGameObjectsWithTag("pUIText").Select(go => go.GetComponent<Text>()).ToArray();
 
+        stateBars = new Image[4];
+        stateBars[0] = GameObject.Find("pHp").GetComponent<Image>(); // 예: HpBar 오브젝트
+        stateBars[1] = GameObject.Find("pMp").GetComponent<Image>(); // 예: MpBar 오브젝트
+        stateBars[2] = GameObject.Find("pSp").GetComponent<Image>(); // 예: SpBar 오브젝트
+        stateBars[3] = GameObject.Find("pExp").GetComponent<Image>(); // 예: ExpBar 오브젝트
+
+        stateTexts = new Text[2];
+        stateTexts[0] = GameObject.Find("HpPercent").GetComponent<Text>(); // 예: HpText 오브젝트
+        stateTexts[1] = GameObject.Find("MpPercent").GetComponent<Text>(); // 예: MpText 오브젝트
+        //stateTexts[2] = GameObject.Find("ExpText").GetComponent<Text>(); // 예: ExpText 오브젝트
+
         UpdateAllUI();
     }
 
@@ -83,6 +94,8 @@ public class PlayerStateUI : MonoBehaviour
             float fillAmount = curHpUI / maxHpUI;
             stateBars[0].fillAmount = fillAmount;
             stateTexts[0].text = Mathf.RoundToInt(fillAmount * 100f) + "%";
+
+            Debug.Log($"HP Fill Amount: {fillAmount}"); // 디버그 로그 추가
         }
     }
 
@@ -111,7 +124,7 @@ public class PlayerStateUI : MonoBehaviour
         {
             float fillAmount = curExpUI / maxExpUI;
             stateBars[3].fillAmount = fillAmount;
-            stateTexts[2].text = Mathf.RoundToInt(fillAmount * 100f) + "%";
+            //stateTexts[2].text = Mathf.RoundToInt(fillAmount * 100f) + "%";
         }
     }
 
