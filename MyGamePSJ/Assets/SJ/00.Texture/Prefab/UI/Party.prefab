@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1400799538}
   - component: {fileID: 1400799537}
   m_Layer: 5
-  m_Name: 100%
+  m_Name: rText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2678492831367193236}
+  - component: {fileID: 3956343719740385096}
   m_Layer: 5
   m_Name: Party
   m_TagString: Untagged
@@ -119,6 +120,18 @@ RectTransform:
   m_AnchoredPosition: {x: 125.3, y: 28}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3956343719740385096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678492830171098278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89332eae1ef489a4a8371290e2affd2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2678492830687886675
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +145,7 @@ GameObject:
   - component: {fileID: 2678492830687886677}
   - component: {fileID: 1933362780}
   m_Layer: 5
-  m_Name: pHp
+  m_Name: rHp
   m_TagString: PartyHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992c9185b49dc174fa5a743f93568853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pHp: {fileID: 2678492830687886677}
+  _pHpText: {fileID: 1400799537}
 --- !u!1 &2678492830865026951
 GameObject:
   m_ObjectHideFlags: 0

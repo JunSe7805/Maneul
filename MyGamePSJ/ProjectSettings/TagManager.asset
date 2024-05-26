@@ -23,6 +23,8 @@ TagManager:
   - Boss
   - VRSword
   - VRPlayer
+  - mPartyHp
+  - mPartyHpText
   layers:
   - Default
   - TransparentFX

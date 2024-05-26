@@ -9,6 +9,7 @@ public class GameUIManager : MonoBehaviour
     // [플레이어 스테이터스]
     public PlayerStateUI playStateUI;          // 체력
     public BossStateUI bossStateUI; // 보스 체력
+    public PartyStateUI partyStateUI;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class GameUIManager : MonoBehaviour
         playStateUI.SetExp(0, playStateUI.maxExpUI);  // 경험치는 보통 0부터 시작
 
         bossStateUI.BossSetHp(bossStateUI.curBossHpUI, bossStateUI.maxBossHpUI);
+
+        partyStateUI.PartySetHp(partyStateUI.mCurHpUI, partyStateUI.mMaxHpUI);
     }
 
     // Update is called once per frame
@@ -52,6 +55,10 @@ public class GameUIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             bossStateUI.BossTakeDamage(15f); // 예시로 마나 20을 소모하는 스킬
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            partyStateUI.PartyTakeDamage(20f); // 예시로 마나 20을 소모하는 스킬
         }
     }
 
