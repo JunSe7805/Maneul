@@ -68,12 +68,11 @@ public class PlayerCtrl : MonoBehaviour
         MoveDir = Vector3.zero;
         _curHp = _maxHp;
         attackHit = false;
-        //GameUIManager.instance.PlayerHpUI(40.0f,100.0f);
     }
 
     protected virtual void Update()
     {
-        CameraRotation();
+        //CameraRotation();
         GetInput();
         ShotCheck();
     }

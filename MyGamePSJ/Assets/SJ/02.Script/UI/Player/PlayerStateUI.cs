@@ -1,125 +1,160 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStateUI : MonoBehaviour
 {
-    // 플레이어 체럭
     public float curHpUI;
-    public float maxHpUI;
-    // 플레이어 마나
+    public float maxHpUI = 100.0f;
+
     public float curMpUI;
     public float maxMpUI;
-    // 플레이어 기력
+
     public float curSpUI;
     public float maxSpUI;
-    // 플레이어 경험치
+
     public float curExpUI;
     public float maxExpUI;
 
-    private Image[] stateImgUI;
-    private Text[] stateTextUI;
+    private Image[] stateBars;
+    private Text[] stateTexts;
+
     private void Start()
     {
-        curHpUI  = maxHpUI;
-        curMpUI  = maxMpUI;
-        curSpUI  = maxSpUI;
-        curExpUI = maxExpUI;
+        curHpUI = maxHpUI;
+        curMpUI = maxMpUI;
+        curSpUI = maxSpUI;
+        curExpUI = 0;  // 경험치는 보통 0부터 시작합니다.
 
-        //stateImgUI = GameObject.FindGameObjectsWithTag("State").Select(go => go.GetComponent<Image>()).ToArray();
-        //stateTextUI = GameObject.FindGameObjectsWithTag("pUIText").Select(go => go.GetComponent<Text>()).ToArray();
+        Debug.Log($"Initial HP: {curHpUI}/{maxHpUI}");
+        Debug.Log($"Initial MP: {curMpUI}/{maxMpUI}");
+        Debug.Log($"Initial SP: {curSpUI}/{maxSpUI}");
+        Debug.Log($"Initial EXP: {curExpUI}/{maxExpUI}");
 
-        //UpdateAllUI();
+        stateBars = GameObject.FindGameObjectsWithTag("State").Select(go => go.GetComponent<Image>()).ToArray();
+        stateTexts = GameObject.FindGameObjectsWithTag("pUIText").Select(go => go.GetComponent<Text>()).ToArray();
+
+        UpdateAllUI();
     }
 
-    private void Update()
-    {
-        SetHp(70,100);
-        SetMp(50, 100);
-        SetSp(10, 100);
-        SetExp(10, 100);
-    }
+    // 공격시 체력감소
     public void TakeDamage(float damage)
     {
         curHpUI -= damage;
-        curHpUI = Mathf.Clamp(curHpUI, 100, maxHpUI);
+        curHpUI = Mathf.Clamp(curHpUI, 0, maxHpUI);
+        UpdateHpUI();
     }
 
-    // 플레이어 체력 관리
     public void SetHp(float curHpUI, float maxHpUI)
     {
         this.curHpUI = curHpUI;
         this.maxHpUI = maxHpUI;
-        PlayerHpBar();
+        UpdateHpUI();
     }
+
     public void SetMp(float curMpUI, float maxMpUI)
     {
         this.curMpUI = curMpUI;
         this.maxMpUI = maxMpUI;
-        PlayerMpBar();
+        UpdateMpUI();
     }
+
     public void SetSp(float curSpUI, float maxSpUI)
     {
         this.curSpUI = curSpUI;
         this.maxSpUI = maxSpUI;
-        PlayerSpBar();
+        UpdateSpUI();
     }
+
     public void SetExp(float curExpUI, float maxExpUI)
     {
         this.curExpUI = curExpUI;
         this.maxExpUI = maxExpUI;
-        PlayerExpBar();
+        UpdateExpUI();
     }
-    public void PlayerHpBar()
-    {
-        Image HpBarImg = GameObject.FindGameObjectsWithTag("State")[0].GetComponent<Image>();
-        Text HpText = GameObject.FindGameObjectsWithTag("pUIText")[0].GetComponent<Text>();
-        if (HpBarImg != null)
-        {
-            float fillAmount = curHpUI / maxHpUI;
-            HpBarImg.fillAmount = fillAmount; // 체력에 맞게 fillAmount 설정
 
-            // 체력 텍스트 업데이트
-            HpText.text = Mathf.RoundToInt(fillAmount * 100f) + "%";
+    private void UpdateHpUI()
+    {
+        if (stateBars.Length > 0 && stateTexts.Length > 0)
+        {
+
+            float fillAmount = curHpUI / maxHpUI;
+            stateBars[0].fillAmount = fillAmount;
+            stateTexts[0].text = Mathf.RoundToInt(fillAmount * 100f) + "%";
         }
     }
 
-    public void PlayerMpBar()
+    private void UpdateMpUI()
     {
-        Image MpBarImg = GameObject.FindGameObjectsWithTag("State")[1].GetComponent<Image>();
-        Text MpText = GameObject.FindGameObjectsWithTag("pUIText")[1].GetComponent<Text>();
-        if (MpBarImg != null)
+        if (stateBars.Length > 1 && stateTexts.Length > 1)
         {
             float fillAmount = curMpUI / maxMpUI;
-            MpBarImg.fillAmount = fillAmount; // 체력에 맞게 fillAmount 설정
-
-            // 마나 텍스트 업데이트
-            MpText.text = Mathf.RoundToInt(fillAmount * 100f) + "%";
+            stateBars[1].fillAmount = fillAmount;
+            stateTexts[1].text = Mathf.RoundToInt(fillAmount * 100f) + "%";
         }
     }
 
-    public void PlayerSpBar()
+    private void UpdateSpUI()
     {
-        Image SpBarImg = GameObject.FindGameObjectsWithTag("State")[2].GetComponent<Image>();
-        if (SpBarImg != null)
+        if (stateBars.Length > 2)
         {
             float fillAmount = curSpUI / maxSpUI;
-            SpBarImg.fillAmount = fillAmount; // 체력에 맞게 fillAmount 설정
+            stateBars[2].fillAmount = fillAmount;
         }
     }
 
-    public void PlayerExpBar()
+    private void UpdateExpUI()
     {
-        Image ExpBarImg = GameObject.FindGameObjectsWithTag("State")[3].GetComponent<Image>();
-        Text ExpText = GameObject.FindGameObjectWithTag("pUIText").GetComponent<Text>();
-        if (ExpBarImg != null)
+        if (stateBars.Length > 3 && stateTexts.Length > 2)
         {
             float fillAmount = curExpUI / maxExpUI;
-            ExpBarImg.fillAmount = fillAmount; // 체력에 맞게 fillAmount 설정
-
-            // 체력 텍스트 업데이트
-            ExpText.text = Mathf.RoundToInt(fillAmount * 100f) + "%";
+            stateBars[3].fillAmount = fillAmount;
+            stateTexts[2].text = Mathf.RoundToInt(fillAmount * 100f) + "%";
         }
+    }
+
+    private void UpdateAllUI()
+    {
+        UpdateHpUI();
+        UpdateMpUI();
+        UpdateSpUI();
+        UpdateExpUI();
+    }
+
+    // 마나만 소모하는 스킬 사용 메서드
+    public void UseSkill(float mpCost)
+    {
+        if (curMpUI >= mpCost)
+        {
+            curMpUI -= mpCost;
+            curMpUI = Mathf.Clamp(curMpUI, 0, maxMpUI);
+            UpdateMpUI();
+        }
+        else
+        {
+            Debug.Log("Not enough mana to use the skill");
+        }
+    }
+
+    public void GainExperience(float exp)
+    {
+        curExpUI += exp;
+        if (curExpUI >= maxExpUI)
+        {
+            curExpUI -= maxExpUI;
+            // 레벨업 처리 (레벨업 시 필요한 추가 로직을 여기에 작성)
+            LevelUp();
+        }
+        UpdateExpUI();
+    }
+
+    private void LevelUp()
+    {
+        // 레벨업 시 필요한 로직 (예: 플레이어의 레벨 증가, 최대 경험치 증가 등)
+        // 예시:
+        maxExpUI *= 1.1f; // 다음 레벨업에 필요한 경험치를 증가시킴
+                          // 레벨업 애니메이션이나 사운드 효과 추가 가능
     }
 }
